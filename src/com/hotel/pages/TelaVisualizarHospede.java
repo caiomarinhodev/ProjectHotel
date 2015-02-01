@@ -197,9 +197,11 @@ public class TelaVisualizarHospede extends JFrame {
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/1422745299_678092-sign-add-16.png"))); // NOI18N
         jButton2.setText("NOVO");
+        jButton2.setEnabled(false);
 
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/1422745326_678069-sign-error-16.png"))); // NOI18N
         jButton3.setText("REMOVER");
+        jButton3.setEnabled(false);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);

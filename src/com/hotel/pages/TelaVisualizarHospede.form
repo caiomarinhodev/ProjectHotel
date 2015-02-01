@@ -314,6 +314,7 @@
               <Image iconType="3" name="/icons/1422745299_678092-sign-add-16.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="NOVO"/>
+            <Property name="enabled" type="boolean" value="false"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="jButton3">
@@ -322,6 +323,7 @@
               <Image iconType="3" name="/icons/1422745326_678069-sign-error-16.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="REMOVER"/>
+            <Property name="enabled" type="boolean" value="false"/>
           </Properties>
         </Component>
       </SubComponents>
