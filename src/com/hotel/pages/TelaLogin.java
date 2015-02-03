@@ -65,16 +65,15 @@ public class TelaLogin extends JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        painelEmCamadas = new javax.swing.JLayeredPane();
+        painelBotões = new javax.swing.JPanel();
+        botaoEntrar = new JButton();
+        btnRegistrar = new javax.swing.JButton();
+        logo = new javax.swing.JLabel();
         painelCampos = new javax.swing.JPanel();
         labelLogin = new JLabel();
         campoLogin = new JTextField();
         labelSenha = new JLabel();
         campoSenha = new JPasswordField();
-        painelBotões = new javax.swing.JPanel();
-        botaoEntrar = new JButton();
-        btnRegistrar = new javax.swing.JButton();
-        logo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setTitle("LOGIN");
@@ -86,6 +85,43 @@ public class TelaLogin extends JFrame {
                 formWindowClosing(evt);
             }
         });
+
+        botaoEntrar.setText("Entrar");
+        botaoEntrar.setEnabled(false);
+        botaoEntrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoEntrarActionPerformed(evt);
+            }
+        });
+
+        btnRegistrar.setText("Registrar");
+        btnRegistrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegistrarActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout painelBotõesLayout = new javax.swing.GroupLayout(painelBotões);
+        painelBotões.setLayout(painelBotõesLayout);
+        painelBotõesLayout.setHorizontalGroup(
+            painelBotõesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelBotõesLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btnRegistrar)
+                .addGap(18, 18, 18)
+                .addComponent(botaoEntrar, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(42, Short.MAX_VALUE))
+        );
+        painelBotõesLayout.setVerticalGroup(
+            painelBotõesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(painelBotõesLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(painelBotõesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnRegistrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(botaoEntrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+
+        logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/1422655255_hotel.png"))); // NOI18N
 
         painelCampos.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         painelCampos.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -130,7 +166,7 @@ public class TelaLogin extends JFrame {
                         .addGroup(painelCamposLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(labelSenha)
                             .addComponent(labelLogin))
-                        .addGap(0, 232, Short.MAX_VALUE)))
+                        .addGap(0, 215, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         painelCamposLayout.setVerticalGroup(
@@ -143,65 +179,23 @@ public class TelaLogin extends JFrame {
                 .addComponent(labelSenha)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(campoSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
-
-        painelEmCamadas.add(painelCampos);
-        painelCampos.setBounds(0, 10, 290, 110);
-        painelCampos.getAccessibleContext().setAccessibleDescription("");
-
-        botaoEntrar.setText("Entrar");
-        botaoEntrar.setEnabled(false);
-        botaoEntrar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botaoEntrarActionPerformed(evt);
-            }
-        });
-
-        btnRegistrar.setText("Registrar");
-        btnRegistrar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRegistrarActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout painelBotõesLayout = new javax.swing.GroupLayout(painelBotões);
-        painelBotões.setLayout(painelBotõesLayout);
-        painelBotõesLayout.setHorizontalGroup(
-            painelBotõesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelBotõesLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btnRegistrar)
-                .addGap(18, 18, 18)
-                .addComponent(botaoEntrar, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        painelBotõesLayout.setVerticalGroup(
-            painelBotõesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(painelBotõesLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(painelBotõesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnRegistrar, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
-                    .addComponent(botaoEntrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
-        );
-
-        logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/1422655255_hotel.png"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(painelEmCamadas, javax.swing.GroupLayout.DEFAULT_SIZE, 290, Short.MAX_VALUE)
-                    .addComponent(painelBotões, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(16, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(98, 98, 98))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(painelCampos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(painelBotões, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -209,11 +203,13 @@ public class TelaLogin extends JFrame {
                 .addContainerGap()
                 .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(painelEmCamadas, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(painelCampos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(painelBotões, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        painelCampos.getAccessibleContext().setAccessibleDescription("");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -263,7 +259,6 @@ public class TelaLogin extends JFrame {
     private javax.swing.JLabel logo;
     private javax.swing.JPanel painelBotões;
     private javax.swing.JPanel painelCampos;
-    private javax.swing.JLayeredPane painelEmCamadas;
     // End of variables declaration//GEN-END:variables
 
     public void inicializa() {
