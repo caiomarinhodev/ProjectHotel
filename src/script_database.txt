@@ -1,0 +1,164 @@
+drop table if exists CARTAO;
+
+drop table if exists CONTRATO;
+
+drop table if exists DEPENDENTE;
+
+drop table if exists HOSPEDE;
+
+drop table if exists PESSOA;
+
+drop table if exists SBABY;
+
+drop table if exists SCARRO;
+
+drop table if exists SERVICO;
+
+drop table if exists SQUARTO;
+
+drop table if exists USUARIO;
+
+/*==============================================================*/
+/* Table: CARTAO                                                */
+/*==============================================================*/
+create table CARTAO
+(
+   ID                   integer not null auto_increment,
+   ID_HOSPEDE           integer,
+   ID_CONTRATO          integer,
+   NOME_CARTAO          varchar(100),
+   NUMERO_CARTAO        varchar(50),
+   NUMERO_CONFIRMACAO   varchar(10),
+   DATA_VALIDADE        date,
+   CPF_TITULAR          varchar(20),
+   primary key (ID)
+);
+
+/*==============================================================*/
+/* Table: CONTRATO                                              */
+/*==============================================================*/
+create table CONTRATO
+(
+   ID                   integer not null auto_increment,
+   STATUS               boolean,
+   CARTAO_CREDITO       varchar(20),
+   TOTAL                double,
+   ID_HOSPEDE           integer,
+   primary key (ID)
+);
+
+/*==============================================================*/
+/* Table: DEPENDENTE                                            */
+/*==============================================================*/
+create table DEPENDENTE
+(
+   ID                   integer not null auto_increment,
+   NOME                 varchar(150),
+   CPF                  varchar(20),
+   RG                   varchar(20),
+   IDADE                integer,
+   ID_CONTRATO          integer,
+   ID_HOSPEDE           integer,
+   primary key (ID)
+);
+
+/*==============================================================*/
+/* Table: HOSPEDE                                               */
+/*==============================================================*/
+create table HOSPEDE
+(
+   ID                   integer not null auto_increment,
+   NOME                 varchar(150),
+   CPF                  varchar(20),
+   ENDERECO             varchar(150),
+   DATA_NASCIMENTO      date,
+   ID_CONTRATO          integer,
+   ID_PESSOA            integer,
+   primary key (ID)
+);
+
+/*==============================================================*/
+/* Table: PESSOA                                                */
+/*==============================================================*/
+create table PESSOA
+(
+   ID                   integer not null auto_increment,
+   NOME                 varchar(150),
+   CPF                  varchar(20),
+   RG                   varchar(20),
+   IDADE                integer,
+   primary key (ID)
+);
+
+/*==============================================================*/
+/* Table: SBABY                                                 */
+/*==============================================================*/
+create table SBABY
+(
+   ID                   integer not null auto_increment,
+   DE                   varchar(20),
+   ATE                  varchar(20),
+   TOTAL_HORAS          integer,
+   TOTAL                double,
+   ID_CONTRATO          integer,
+   ID_HOSPEDE           integer,
+   primary key (ID)
+);
+
+/*==============================================================*/
+/* Table: SCARRO                                                */
+/*==============================================================*/
+create table SCARRO
+(
+   ID                   integer not null auto_increment,
+   TIPO                 varchar(50),
+   DIARIAS              integer,
+   ADICIONAL            boolean,
+   TANQUE               boolean,
+   SEGURO               boolean,
+   TOTAL                double,
+   ID_CONTRATO          integer,
+   ID_HOSPEDE           integer,
+   primary key (ID)
+);
+
+/*==============================================================*/
+/* Table: SERVICO                                               */
+/*==============================================================*/
+create table SERVICO
+(
+   ID                   integer not null auto_increment,
+   ID_CONTRATO          integer,
+   ID_HOSPEDE           integer,
+   ID_SERVICO           integer,
+   TOTAL                double,
+   primary key (ID)
+);
+
+/*==============================================================*/
+/* Table: SQUARTO                                               */
+/*==============================================================*/
+create table SQUARTO
+(
+   ID                   integer not null auto_increment,
+   TIPO                 varchar(50),
+   DIARIAS              integer,
+   ADICIONAL            boolean,
+   NUMERO_CAMAS         integer,
+   TOTAL                double,
+   ID_CONTRATO          integer,
+   ID_HOSPEDE           integer,
+   primary key (ID)
+);
+
+/*==============================================================*/
+/* Table: USUARIO                                               */
+/*==============================================================*/
+create table USUARIO
+(
+   ID                   integer not null auto_increment,
+   LOGIN                varchar(50),
+   SENHA                varchar(50),
+   TIPO                 varchar(50),
+   primary key (ID)
+);
