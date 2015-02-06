@@ -7,6 +7,7 @@
 package com.hotel.init;
 
 import com.hotel.controllers.Sistema;
+import com.hotel.pages.TelaEntrada;
 import java.sql.Connection;
 import com.hotel.util.Connect;
 import java.sql.PreparedStatement;
@@ -29,10 +30,7 @@ public class TelaSelectConn extends javax.swing.JFrame {
     public TelaSelectConn() {
         initComponents();
         setLocationRelativeTo(null);
-        String ip = (String) campoSelect.getSelectedItem();
-        //boolean ao final para test. setar for false.
-        conn = Connect.ConnectDb(ip, port, "hoteldb", "admin", "abcde", true);
-        Sistema.setConnection(conn);
+        
     }
 
     /**
@@ -99,7 +97,11 @@ public class TelaSelectConn extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         try {
-            //new T
+            String ip = (String) campoSelect.getSelectedItem();
+            //boolean ao final para test. setar for false.
+            conn = Connect.ConnectDb(ip, port, "hoteldb", "admin", "abcde", true);
+            Sistema.setConnection(conn);
+            new TelaEntrada().setVisible(true);
         } catch (Exception e) {
             System.exit(0);
         }       
